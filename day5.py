@@ -21,7 +21,6 @@ print("The list after deletion",list1)
 #Create a tuple and print the reverse of the created tuple
 
 tuple = (1, 2, 3 , 7 ,10,43)
-
 print("The initial tuple is",tuple)
 new = sorted(tuple,reverse = True)
 print("The reversed tuple is",new)
