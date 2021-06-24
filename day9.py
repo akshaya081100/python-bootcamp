@@ -1,93 +1,142 @@
 #To add +2to every element in the list
+list = [1,2,3,4,5,6,7,8]
+print("The list is",list)
+newlist = []
+for i in list:
+    newlist = i+2
+    print(newlist)
 
-My_List = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
-for n in My_List[1::2]:
-    print (n)
-    
 # To print the 5,4,3.. pattern
-for i in range(1, 6):
-    for j in range(5, i-1,-1):
+for i in range(5, 0, -1):
+    for j in range(i, 0, -1):
         print(j, end="")
     print()
+
+
     
 #Python program to generate Fibonacci series until 'n' value
-    
-n = int(input("Enter the value of 'n': "))
-a = 0
-b = 1
-sum = 0
-count = 1
-print("Fibonacci Series: ", end = " ")
-while(count <= n):
-  print(sum, end = " ")
-  count += 1
-  a = b
-  b = sum
-  sum = a + b
+ nterms = int(input("How many terms? "))
+
+# first two terms
+n1, n2 = 0, 1
+count = 0
+
+# check if the number of terms is valid
+if nterms <= 0:
+   print("Please enter a positive integer")
+# if there is only one term, return n1
+elif nterms == 1:
+   print("Fibonacci sequence upto",nterms,":")
+   print(n1)
+# generate fibonacci sequence
+else:
+   print("Fibonacci sequence:")
+   while count < nterms:
+       print(n1)
+       nth = n1 + n2
+       # update values
+       n1 = n2
+       n2 = nth
+       count += 1   
+
   
 #To generate armstrong number
-  
-for num in range(1000):
-  temp=num
-  sum=0
-  while temp>0:
-    digit=temp%10
-    sum=sum+digit**3
-    temp=temp//10
+  # Python program to check if the number is an Armstrong number or not
 
-  if sum==num:
-    print (num)
+# take input from the user
+num = int(input("Enter a number: "))
+
+# initialize sum
+sum = 0
+
+# find the sum of the cube of each digit
+temp = num
+while temp > 0:
+   digit = temp % 10
+   sum += digit ** 3
+   temp //= 10
+
+# display the result
+if num == sum:
+   print(num,"is an Armstrong number")
+else:
+   print(num,"is not an Armstrong number")
+
 
 #To print the multiplication of 9
-n = int(9)
-print("The muliplication table of 9 :")
 
-# use for loop to iterate 10 times
-for i in range(1,11):
-   
-   print(n,'x',i,'=',n*i)
+num = int(input(" Enter the number : "))    
+# using for loop to iterate multiplication 10 times     
+print("Multiplication Table of : ")  
+for i in range(1,11):    
+   print(num,'x',i,'=',num*i) 
+
+
 
 #To check the program positive or negative
-   
-num = float(input("Enter a number: "))
-if num > 0:
-   print("Positive number")
-elif num == 0:
-   print("Zero")
-else:
-   print("Negative number")
-   
+   num = float(input("Enter a number: "))  
+  
+if num > 0:  
+ print("{0} is a positive number".format(num))  
+elif num == 0:  
+   print("{0} is zero".format(num))   
+else:  
+   print("{0} is negative number".format(num))   
+
+
+
+    
+    
 # To convert days into ages
+days= int(input("Enter the number of days"))
+years= days / 365  
+print("Number of years is: ");  
+print(years);  
 
-print("Enter the days:")
 
-d, y, w = int(input()), None, None
 
-y = (int)(d / 365)
-w = (int)((d % 365) / 7)
-d = (int)(d - ((y * 365) + (w)))
-print(y, " Year, ", w, " Weeks, and ", d, " Days\n")
 
 #To solve trignomertic function using math function
+# importing math module
 import math
-x = int(input("Enter the number:"))
-print( "sin(x)=",math.sin(x));
-print("cos(x)=",math.cos(x));
-print("tan(x)=",math.tan(x));
-a= math.sin(x)
-b= math.cos(x)
-c= math.tan(x)
-d= (a+b)/c
-print("(sin(x)+cos(x))/tan(x)=",d)
+
+# number 
+x = 0.75
+
+# math.cos()
+print("math.cos(",x,"): ", math.cos(x));
+# math.sin()
+print("math.sin(",x,"): ", math.sin(x));
+# math.tan()
+print("math.tan(",x,"): ", math.tan(x));
+
+# math.acos()
+print("math.acos(",x,"): ", math.acos(x));
+# math.asin()
+print("math.asin(",x,"): ", math.asin(x));
+# math.atan()
+print("math.atan(",x,"): ", math.atan(x));
+
+y = 2
+# math.atan2(y,x) = atan(y/x)
+print("math.atan2(",y,",",x,"): ", math.atan2(y,x))
+
+# math.hypot(x,y)
+print("math.hypot(",x,",",y,"): ", math.hypot(x,y))
+
+
 
 # To create calculator
+
+# menus
 print("Calculator")
 print("1.Add")
 print("2.Substract")
 print("3.Multiply")
 print("4.Divide")
 
-ch=int(input("Enter the Choice(1-4): "))
+# input choice
+ch=int(input("Enter Choice(1-4): "))
 
 if ch==1:
     a=int(input("Enter A:"))
@@ -110,4 +159,4 @@ elif ch==4:
     c=a/b
     print("Quotient = ",c)
 else:
-    print("Invalid Choice ")
+    print("Invalid Choice")
